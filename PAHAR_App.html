@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Courier, monospace;
+      text-align: center;
+      padding: 20px;
+    }
+    .bold-text {
+      font-weight: bold;
+      font-size: 34px;
+    }
+    #txtCodeInput {
+      width: 200px;
+      padding: 10px;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    #submitBtn {
+      background-color: yellow;
+      color: black;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="bold-text">
+  <br>
+  <br>
+  <br>
+  </div>
+  <!-- Header Image -->
+  <img src="PAH_AR.png" alt="PAH Amazing Race" style="width: 100%; max-width: 600px;">
+
+  <!-- Instruction Text -->
+  <div class="bold-text">
+    Enter the answers to Question 1 and Question 2 below without any spaces between.<br>
+    <br>
+    Click submit and the right answer will take you to the next clue.<br>
+    <br>
+    Press back in your browser if you entered the wrong value.
+  </div>
+
+  <!-- Input Field -->
+  <input type="text" id="txtCodeInput" placeholder="Enter 5-digit code">
+
+  <!-- Submit Button -->
+  <button id="submitBtn" onclick="handleSubmit()">SUBMIT</button>
+
+  <!-- JavaScript Logic -->
+  <script>
+    function handleSubmit() {
+      const input = document.getElementById("txtCodeInput").value;
+      const regex = /^\d{5}$/;
+
+      if (regex.test(input)) {
+        if (input === "21432") {
+          window.location.href = "https://jlockprojects.github.io/pah_amazing_race/PAHAR_Riddle.html";
+        } else {
+          alert("Please enter the correct code, use the hints for Questions 1 and 2 if needed");
+        }
+      } else {
+        alert("Please enter a valid 5-digit code");
+      }
+    }
+  </script>
+
+</body>
+</html>
